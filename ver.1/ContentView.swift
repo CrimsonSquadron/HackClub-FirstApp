@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  FitnessDashBoard_SwiftUI
+//  ComputeDashBoard_SwiftUI
 //
 //  Created by Matthew Dudzinski on Feb 23, 2023
 //
@@ -69,7 +69,7 @@ struct lastDay : View {
 
 struct fitnessInfo: View {
     
-    var fitData : [Fitness]
+    var fitData : [fitness]
     var columns = Array(repeating: GridItem(.flexible(), spacing: 5), count: 2)
     
     var body: some View {
@@ -100,7 +100,8 @@ struct fitnessInfo: View {
     }
 }
 
-struct Fitness : Identifiable {
+
+struct fitness : Identifiable {
     var id: Int
     var title: String
     var image: String
@@ -110,9 +111,9 @@ struct Fitness : Identifiable {
 
 var fitnessData = [
 
-    Fitness(id: 0, title: "CPU", image: "heart", data: "67%", suggest: "Stable in current use"),
-    Fitness(id: 1, title: "RAM", image: "running", data: "4.5 GB used", suggest: "Buy more RAM"),
-    Fitness(id: 2, title: "Storage", image: "cycle", data: "128 out of 256GB used", suggest: "Buy more Storage"),
+    fitness(id: 0, title: "CPU", image: "heart", data: "67%", suggest: "Stable in current use"),
+    fitness(id: 1, title: "RAM", image: "running", data: "4.5 GB used", suggest: "placeholder"),
+    fitness(id: 2, title: "Storage", image: "cycle", data: "128 out of 256GB used", suggest: "placeholder"),
 
 ]
 
@@ -138,7 +139,7 @@ struct addWidgets : View {
 struct tabBar : View {
     var body: some View {
         HStack(spacing: 10) {
-            Image(systemName: "macpro.gen1")
+            Image(systemName: "terminal")
                 .resizable()
                 .frame(width: 20, height: 20)
                 .foregroundColor(Color("running"))
